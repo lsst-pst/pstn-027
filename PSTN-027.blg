@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: PSTN-027.aux
+The style file: yahapj.bst
+Database file #1: local.bib
+Database file #2: lsst.bib
+Warning--entry type for "PSTN-008" isn't style-file defined
+--line 2258 of file lsst.bib
+Warning--entry type for "PSTN-019" isn't style-file defined
+--line 2357 of file lsst.bib
+Warning--entry type for "PSTN-026" isn't style-file defined
+--line 2420 of file lsst.bib
+Warning--entry type for "PSTN-028" isn't style-file defined
+--line 2438 of file lsst.bib
+Database file #3: lsst-dm.bib
+Database file #4: refs_ads.bib
+Database file #5: refs.bib
+Database file #6: books.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty publisher in Coughlin2016
+Warning--empty publisher in Ingraham2016
+Warning--empty publisher in Sebag2014
+You've used 8 entries,
+            3215 wiz_defined-function locations,
+            717 strings with 6247 characters,
+and the built_in function-call counts, 4009 in all, are:
+= -- 309
+> -- 261
+< -- 8
++ -- 109
+- -- 92
+* -- 318
+:= -- 728
+add.period$ -- 8
+call.type$ -- 8
+change.case$ -- 51
+chr.to.int$ -- 8
+cite$ -- 11
+duplicate$ -- 205
+empty$ -- 276
+format.name$ -- 98
+if$ -- 800
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 3
+newline$ -- 29
+num.names$ -- 32
+pop$ -- 85
+preamble$ -- 1
+purify$ -- 51
+quote$ -- 0
+skip$ -- 132
+stack$ -- 0
+substring$ -- 196
+swap$ -- 9
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 63
+warning$ -- 3
+while$ -- 30
+width$ -- 0
+write$ -- 80
+(There were 7 warnings)

@@ -1,0 +1,44 @@
+\begin{thebibliography}{}
+\providecommand\natexlab[1]{#1}
+\providecommand\JournalTitle[1]{#1}
+
+\bibitem[{{Coughlin} {et~al.}(2016){Coughlin}, {Abbott}, {Brannon}, {Claver},
+  {Doherty}, {Fisher-Levine}, {Ingraham}, {Lupton}, {Mondrik}, \&
+  {Stubbs}}]{Coughlin2016}
+{Coughlin}, M., {Abbott}, T.~M.~C., {Brannon}, K., {et~al.} 2016, Society of
+  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 9910,
+  {A collimated beam projector for precise telescope calibration}, 99100V
+
+\bibitem[{{Coughlin} {et~al.}(2018){Coughlin}, {Deustua}, {Guyonnet},
+  {Mondrik}, {Rice}, {Stubbs}, \& {Woodward}}]{Coughlin2018}
+{Coughlin}, M.~W., {Deustua}, S., {Guyonnet}, A., {et~al.} 2018,
+  \href{http://dx.doi.org/10.1117/12.2309582}{in Society of Photo-Optical
+  Instrumentation Engineers (SPIE) Conference Series, Vol. 10704, \procspie},
+  1070420
+
+\bibitem[{Ingraham(2020)}]{PSTN-028}
+Ingraham, P. 2020, Atmospheric Properties with the LSST Auxiliary Telescope
+
+\bibitem[{{Ingraham} {et~al.}(2016){Ingraham}, {Stubbs}, {Claver}, {Lupton},
+  {Araujo}, {Liang}, {Andrew}, {Barr}, {Brannon}, {Coughlin}, {Fisher-Lavine},
+  {Gressler}, {Sebag}, {Thomas}, {Wiecha}, \& {Yoachim}}]{Ingraham2016}
+{Ingraham}, P., {Stubbs}, C.~W., {Claver}, C., {et~al.} 2016, Society of
+  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 9906,
+  {The LSST calibration hardware system design and development}, 99060O
+
+\bibitem[{Jenness(2020)}]{PSTN-019}
+Jenness, T. 2020, LSST Data Management Software System
+
+\bibitem[{Lupton(2020)}]{PSTN-026}
+Lupton, R. 2020, LSST Calibration Strategy and Pipelines
+
+\bibitem[{{Sebag} {et~al.}(2014){Sebag}, {Gressler}, {Liang}, {Axelrod},
+  {Claver}, \& {Andrew}}]{Sebag2014}
+{Sebag}, J., {Gressler}, W.~J., {Liang}, M., {et~al.} 2014, Society of
+  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 9145,
+  {Calibration systems for LSST}, 91453L
+
+\bibitem[{Xin(2020)}]{PSTN-008}
+Xin, B. 2020, Performance of the LSST Active Optics System
+
+\end{thebibliography}

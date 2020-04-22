@@ -1,40 +1,209 @@
 \section{Introduction}
 
 \begin{itemize} 
+
 \item 
 Much of LSST science will be limited by systematic errors in the photometry. 
 \item 
-The importance of characterizing and eliminating/compensating for these systematics was recognized early on
+The importance of characterizing and eliminating/compensating for these systematics was recognized early on and systems have been developed at tested to minimized their impact. Preliminary design work in \cite{Ingraham2016}.
+\item Photmetric errors also come from atmospheric absorption, but these effects are measured by a separate telescope (\cite{PSTN-028}) and corrections applied at the table level 
+\item 
+Discuss challenges of creating proper flat fields and why a single flat-field screen is not sufficient. Need to go very blue, materials absorb, small space between dome and telescope, reflective optic very fast etc. Needs to be serviceable. Constraints on alignment, mass, scattered light during ops 
 \item
 Paper discusses the suite of instruments developed, designed and fabricated to perform these analyses
 \item
-Presents performance and future uses
+Presents current performance and future planned developments
 \end{itemize}
 
  
 \section{Calibration Screen System} 
 
-\subsection{Illumination Sources} 
-Laser and LEDs
+\begin{itemize} 
+	\item 
+	Top level description of the screen system
+	\begin{itemize}
+		\item White reflective screen permanently mounted on the rotating enclosure.
+		\item Inclined to correspond to a telescope elevation of 21$\deg$
+		\item Flats take into account transmission variations over the FoV and are a function of wavelength
+		\item Traditional dome flats have limitations, particularly at low-frequency type variations. This puts strong constraints on the system
+		\item Used daily to take high SNR flats to monitor dust evolution
+		\item Daily flats are delta correction to the master flats
+		\item Master flats built using monochromatic illumination, removal of low-frequency illumination variation needs to be taken out using a secondary correction
+	\end{itemize} 
+	\item 
+	Discuss flatness and wavelength requirements which dictate design
+	
+	\begin{itemize}
+	\item Flatness and continuity relates directly to intensity variation over the focal plane
+	\item Aiming for a 1\% uniformity results in a flatness requirements of $\sim$3mm over the entire surface
+	\item Need wavelength range that spans the entire LSST bandpass, but more required to verify characterize any red or blue leaks
+	\item Single surface not possible due to assembly and transportation constraints, said multiple panels must be used
+	\item Means tip/tilt system must be incorporated to align adjacent panels (using laser tracker)
+	\item Servicing the vent gates means one must be able get a lift behind the screen, necessitates that screen must be actuated and able to switch between service (vertical) and operational (inclined) positions
+	\end{itemize} 	
 
-\subsection{Screen Design and Fab}
+	\item Include figure showing the screen in the dome and where the laser is located
+	\item Uniformity measurement verification in the dome very challenging. Instead verified in the Tucson lab using sample panels and all the other real hardware before shipping
+
+\end{itemize}
+
+\subsection{Illumination Sources} 
+
+\subsubsection{White Light LEDs}
+
+\begin{itemize}
+	\item Daily flats require very bright broadband sources to minimize time required for daytime calibrations.
+	\item Useful to have (very) high flux source for other detector characterization (PTCs etc)
+	\item Following DECam design (cite Jennifer Marshall) selected bright diodes, one per filter 
+	\item insert table of lamp, central wavelength, wattage, exposure time to get half well depth
+	\item Monochromatic scans require a tunable laser
+\end{itemize}
+	
+\subsubsection{Laser}
+\label{sec:laser}
+
+
+\begin{itemize}
+	\item Selected Ekspla NT-242 due to wavelength range and 1 kHz pulse rate. Wanted to keep lower pulse energies to minimize alignment error destruction of fibers.
+	\item Must be fed into fiber for transport, but fibers heavily absorb blue light. Selected special broadboad fiber (CeramOptec Optran UV/WF)
+	\item Laser must be located on rotating enclosure
+	\item Required air cooling as laser will be in conditions that drop below freezing. 
+	\item Laser located in special container that does temperature control and handles cleanliness
+	\item takes $\sim$3h to warm up and $\sim$1h to cool down
+	\item Laser use primarily done during cloudy nights
+	\item Discussion of laser stability testing (wavelength and intensity)
+	\item Plot of integration time versus wavelength to get SNR = 100 per pixel
+	\item Discussion of laser dropout at half the pump wavelength and how it can be mitigated using different laser design
+\end{itemize}
+
+
+
+\subsection{Screen Design and Fabrication}
+
+\begin{itemize}
+	\item Tried to maximize panel size and minimize gaps (1mm)
+	\item Each panel requires 3 points to do tip/tilt and be fully constrained
+	\item panel substructure mounted to a rigid super structure
+	\item Made entirely of aluminum for weight reasons
+	\item Bearing is type XYZ
+	\item actuation between service and inclined position controlled to ~X um, (about an arcsec of rotation) and performed by actuator located 3/4 of the way up the screen (include photo?)
+	\item panel alignment good to X um, performed using laser tracker
+	\item all support structure heat treated but flatness will be monitored to check for drift
+\end{itemize}
 
 \subsection{Illumination System}
 
+\begin{itemize}
+	\item Discuss original multi-projector design presented in \cite{Sebag2014}, lack of blue throughput resulted in re-design
+	\item Minimizing fiber length meant putting laser on telescope platform (not designed for that) or on dome. Decided against putting laser on floor such that no human is required to connect fiber. Important to keep operation from requiring human intervention.
+	\item Fiber placed at center of screen with NA=0.11, reflector mounted on telescope top-end to redirect light to screen
+	\item fiber intensity matched against BRDF of screen material which governed the shape of the optic
+	\item Optic carved out of pure aluminum. Can tolerate higher scattering compared to glass, easier to shape 
+	\item mounted on whippletree to equally loadshare and not over-constrain the optic. Also has flexures against rotation
+	\item Optic needs to be aligned to boresight, so mounted on top end just above camera cable wrap on a manual hexapod
+	\item Optic surrounded by black baffling and has actuators which remove 3 petals exposing the optic for flats, then close to minimize scattered light and protect the optic
+	\item Regular cleaning will be performed, reflectivity degradation tolerable. Might get a clear coat if required
+	\item Center area contains mountings for a small amount of opto-mechanics 
+	\item Three nests for retro-reflectors machined into optic for alignment purposes
+\end{itemize}
+
 \subsection{Alignment}
 
+\begin{itemize}
+	\item XY positions of reflector, screen, and fiber positioning all done and fed into Spatial Analyzer model
+	\item Telescope relative to screen is done from using alignment system for AOS (\cite{PSTN-008}) where laser tracker at center of M1M3 measures positions of 6 retro-reflectors on dome to get position angle (and decenter relative to mirror)
+	\item Dome positioning is too rough ($\sim$10cm) so angular correction is performed by moving the telescope
+	\item Telescope then moved to specified elevation to match calibration screen inclination angle.
+	\item Alignment that cannot be performed via laser tracker is tip/tilt of fiber, which is controlled using Zaber stage
+	\item TODO: Describe alignment that isn't even determined yet but will be done in the lab in Tucson
+\end{itemize}
 
 \section{Collimated Beam Projector}
 
-\subsection{Design and Fab}
+\begin{itemize}
+	\item CBP designed to mimic star light, and can put arbitrary shapes on the focal plane, but only using a small portion of the pupil. 
+	\item When used in coordination with the telescope, can be used to measure the low-to-mid frequency transmission properties of the optical system.
+	\item also useful for other CCD characterization (brighter fatter, charge transfer efficiencies etc.)
+	\item Used in conjunction with the Tunable laser in \ref{sec:laser} can measure/monitor filter curve transmission.
+	\item Demonstrated in \cite{Coughlin2016, Coughlin2018}
+	\item A LSST specific CBP has been built for LSST and is mounted on the dome above the laser.
+\end{itemize}
 
-\subsection{Mask Design and Use Cases}
+
+\subsection{Design and Fabrication}
+
+\begin{itemize}
+	\item Designed and Fabricated by DFM Engineering
+	\item Folded Schmidt design with 4.1 degree FoV. Multi-element corrector gives high IQ over the full field (figure in section below)
+	\item Holds 5 masks, source intensity is monitored using Hammamatsu S2281 photodiode in an integrating sphere.
+	\item Each mask can be rotated for precise alignment
+	\item Mount repeatability and minimum motions are X arcsec. No pointing model used as corrections are incremental and very small.
+	\item Position angles required for LSST and the CBP dance to choose a position. Mention software designed to perform the coordinate transformations.
+\end{itemize}
 
 \subsection{Image Quality and Opto-mechanical Performance}
 
-\subsection{Relative Throughput Calibration}
+Have on-axis data from acceptance testing, but need actual test data before writing this in any detail.
+
+\begin{itemize}
+	\item show map of measured IQ as a function of field angle
+	\item compare to theoretical curve
+	\item discuss collimation and internal collimation source
+	\item Discuss light levels (at diffraction limit and for resolved objects, which are all surface brightness calcs)
+	\item Discuss CBP throughput measurements as a fxn of wavelength and how this is measured (hopefully Stubbs' solar cells)
+\end{itemize}
+
+\subsection{Mask Designs and Use-Cases}
+
+\begin{itemize}
+	\item Mask designs, depending on use case, must take into account distortion in the CBP and distortion in the LSST optics in order to form a desired image on the detector
+	\item Show distortion matrix for each system and explain how to take a desired focal plane image and what mask shape to generate
+	\item Default masks put one spot per CCD. Have two masks, one with a hole size of X um (Y arcsec) the other with P um (Q arcsec), also have Ronchi grating
+	\item Need opaque surface as chrome deposits have small throughput/background. Use holes cut by laser (5 $\mu$m) and/or electric Discharge machining (EDM, 100 $\mu$m holes). 
+	\item Figure showing mask designs
+\end{itemize}
+
+
+\subsection{Relative Throughput Calibration of LSST}
+
+\begin{itemize}
+	\item How to measure LSST transmission function, specifically for filters
+	\item possibility to expand this to absolute measurement, but beyond the scope of this paper I think
+\end{itemize}
 
 \subsection{Ghost Tracking}
 
-\section{Master Flat Construction}
+\begin{itemize}
+	\item Useful for characterizing ghosts, but ghosts from CBP data will appear slightly different due to only a partial pupil illumination. 
+	\item Ghosts that are in dome flats are not necessarily the same as ghosts from point sources!
+	\item Better used for qualitative analysis and understanding as quantification would be very challenging
+\end{itemize}
 
+\section{Master Flat Construction}
+\label{sec:MasterFlat}
+
+Needs to be coordinated closely with \cite{PSTN-026}. This could go in PSTN-026 but I think it better belongs here. This is actually a very significant research project and will take months to get working... if it works.
+
+\begin{itemize}
+	\item Dome flats are useful for high-frequency (pixel-to-pixel level responses such as hot/cold/non-linear pixels), Not useful for large variations. Also affected by ghosts that are in the flats but not in real data!
+	\item Variability over the flat needs to be measured, this will indicate sampling spacing from CBP
+	\item Full technique still being explored
+\end{itemize}
+
+\subsection{Procedure}
+
+\subsection{Calibrate CBP Relative throughput}
+
+At non-vignetted area of the pupil, measure correction for relative throughput between holes. Do this by moving CBP to put adjacent spots on same pixels as central spot to get relationship, spirals out to get relative mapping.
+
+\subsection{Raster over Pupil}
+
+Explain how to raster over the pupil, using normal incidence for on-axis source. Need index that tracks and relates all photometry to each position.
+
+\subsection{Merging Dome and CBP data}
+
+Need to fit the broad variations in dome flats and remove them, then multiply by the measured variations from the CBP data to give proper illumination correction (including vignetting).
+
+\subsection{Flat Field Analysis}
+
+Discuss variations and artifacts in flats, compare to star flat measured during commissioning. Need to coordinate here with \cite{PSTN-026} as it'll use all the downstream infrastructure. This flat is really just an input to pipelines (\cite{PSTN-019}).
