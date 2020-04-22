@@ -34,6 +34,18 @@ Clean built files::
 
     make clean
 
+
+Build using Docker
+^^^^^^^^^^^^^^^^^^
+
+Can also use `Container with lsst-texmf<https://lsst-texmf.lsst.io/docker.html>`_.
+
+then run:
+
+.. code-block::
+
+        docker run --rm -v `pwd`:/build -w /build lsstsqre/lsst-texmf:latest sh -c 'make'
+
 Updating acronyms
 -----------------
 
